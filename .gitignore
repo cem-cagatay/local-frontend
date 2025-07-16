@@ -1,3 +1,17 @@
+# IDE-specific (Android Studio / IntelliJ)
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Flutter metadata
+.metadata
+
+# Local environment overrides (if present)
+*.env
+.env.*
+
 # Miscellaneous
 *.class
 *.lock
@@ -6,7 +20,6 @@
 *.swp
 .buildlog/
 .history
-
 
 
 # Flutter repo-specific
