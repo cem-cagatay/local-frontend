@@ -20,7 +20,7 @@ class _SignupScreenState extends State<SignupScreen> {
       setState(() {
         _status = '';
       });
-      Navigator.pushReplacementNamed(context, '/home');
+      Navigator.pushReplacementNamed(context, '/main');
     } catch (e) {
       setState(() {
         _status = 'Sign up failed:  [${e.toString()}';

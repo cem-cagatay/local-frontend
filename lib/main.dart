@@ -7,6 +7,7 @@ import 'repositories/firebase_auth_repository.dart';
 import 'screens/signin_screen.dart';
 import 'screens/signup_screen.dart';
 import 'screens/home_screen.dart';
+import 'screens/main_scaffold.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/signin': (context) => SignInScreen(authRepository: authRepository),
         '/signup': (context) => SignupScreen(authRepository: authRepository),
-        '/home': (context) => HomeScreen(),
+        '/main': (context) => const MainScaffold(),
       },
     );
   }

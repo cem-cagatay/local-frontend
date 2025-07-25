@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -8,7 +9,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
-  int _selectedIndex = 0;
   late TabController _tabController;
 
   @override
@@ -21,13 +21,6 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   void dispose() {
     _tabController.dispose();
     super.dispose();
-  }
-
-  void _onNavBarTap(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-    // Add navigation logic for other pages if needed
   }
 
   @override
@@ -72,22 +65,6 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _onNavBarTap,
-        selectedItemColor: Colors.brown[900],
-        unselectedItemColor: Colors.brown[200],
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.notifications_none), label: ''),
-          BottomNavigationBarItem(icon: CircleAvatar(radius: 12), label: ''),
-        ],
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: const Color(0xFFFCFAF3),
-        elevation: 8,
       ),
     );
   }
