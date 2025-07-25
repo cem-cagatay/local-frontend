@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-
+import 'widgets/auth_gate.dart';
 import 'repositories/auth_repository.dart';
 import 'repositories/firebase_auth_repository.dart';
 import 'screens/signin_screen.dart';
 import 'screens/signup_screen.dart';
-import 'screens/home_screen.dart';
 import 'screens/main_scaffold.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: '/signin',
+      home: AuthGate(authRepository: authRepository),
       routes: {
         '/signin': (context) => SignInScreen(authRepository: authRepository),
         '/signup': (context) => SignupScreen(authRepository: authRepository),
