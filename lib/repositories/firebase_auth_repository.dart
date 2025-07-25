@@ -13,4 +13,9 @@ class FirebaseAuthRepository implements AuthRepository {
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
   }
+
+  @override
+  Future<void> signUp(String email, String password) async {
+    await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+  }
 }
